@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Phone Keypad</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+</head>
+<body>
+    <div class="phone" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.5">
+        <div class="screen">
+            <div class="status-bar">
+                <span>12:45</span>
+                <span>100%</span>
+            </div>
+            <div class="main-content">
+                <div class="number-display">
+                    <span id="phone-number">+91</span>
+                </div>
+                <div class="keypad">
+                    <div class="row">
+                        <button class="key" data-number="1">1</button>
+                        <button class="key" data-number="2">2<br><span>ABC</span></button>
+                        <button class="key" data-number="3">3<br><span>DEF</span></button>
+                    </div>
+                    <div class="row">
+                        <button class="key" data-number="4">4<br><span>GHI</span></button>
+                        <button class="key" data-number="5">5<br><span>JKL</span></button>
+                        <button class="key" data-number="6">6<br><span>MNO</span></button>
+                    </div>
+                    <div class="row">
+                        <button class="key" data-number="7">7<br><span>PQRS</span></button>
+                        <button class="key" data-number="8">8<br><span>TUV</span></button>
+                        <button class="key" data-number="9">9<br><span>WXYZ</span></button>
+                    </div>
+                    <div class="row">
+                        <button class="key" data-number="*">*</button>
+                        <button class="key" data-number="0">0</button>
+                        <button class="key" data-number="#">#</button>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-bar">
+                <button id="call-button">Call</button>
+                <button id="delete-button">Delete</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".phone"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.5,
+        });
+
+        const phoneNumberElement = document.getElementById('phone-number');
+        const keys = document.querySelectorAll('.key');
+        const deleteButton = document.getElementById('delete-button');
+
+        keys.forEach(key => {
+            key.addEventListener('click', () => {
+                const number = key.getAttribute('data-number');
+                phoneNumberElement.textContent += number;
+            });
+        });
+
+        deleteButton.addEventListener('click', () => {
+            phoneNumberElement.textContent = phoneNumberElement.textContent.slice(0, -1);
+        });
+    </script>
+</body>
+</html>
