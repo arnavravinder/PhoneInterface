@@ -4,35 +4,24 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #2c3e50, #4ca1af);
-    font-family: Arial, sans-serif;
+    background: black;
+    font-family: 'Jost', sans-serif;
     color: white;
 }
 
-.phone {
-    width: 300px;
-    height: 600px;
-    background: linear-gradient(135deg, #34495e, #2c3e50);
-    border-radius: 30px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
-
 .screen {
-    width: 100%;
-    height: 100%;
-    background: #1e272e;
-    border-radius: 20px;
-    overflow: hidden;
+    width: 90%;
+    max-width: 320px;
+    height: 90%;
+    max-height: 600px;
+    background: black;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    padding: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
 }
 
 .status-bar {
@@ -41,7 +30,9 @@ body {
     width: 100%;
     padding: 10px;
     font-size: 14px;
-    background: #2c3e50;
+    background: #1a1a1a;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .main-content {
@@ -50,18 +41,19 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     width: 100%;
 }
 
 .number-display {
-    background: #34495e;
+    background: #1a1a1a;
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 20px;
     width: 100%;
     text-align: center;
     font-size: 24px;
+    letter-spacing: 2px;
+    font-family: 'Slackey', cursive;
 }
 
 .keypad {
@@ -73,16 +65,16 @@ body {
 .row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .key {
-    background: #34495e;
+    background: #333;
     border: none;
     border-radius: 10px;
     color: white;
-    padding: 20px;
-    font-size: 20px;
+    padding: 10px;
+    font-size: 18px;
     width: 80px;
     text-align: center;
     cursor: pointer;
@@ -91,12 +83,12 @@ body {
 
 .key span {
     display: block;
-    font-size: 12px;
+    font-size: 10px;
     color: #bdc3c7;
 }
 
 .key:hover {
-    background: #4ca1af;
+    background: #555;
 }
 
 .navigation-bar {
@@ -104,20 +96,25 @@ body {
     justify-content: space-around;
     width: 100%;
     padding: 10px;
-    background: #2c3e50;
+    background: #1a1a1a;
+    border-radius: 10px;
 }
 
 .navigation-bar button {
-    background: #34495e;
+    background: #333;
     border: none;
-    border-radius: 10px;
+    border-radius: 50%;
     color: white;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 24px;
     cursor: pointer;
     transition: background 0.3s;
 }
 
+#call-button {
+    background: #34c759;
+}
+
 .navigation-bar button:hover {
-    background: #4ca1af;
+    background: #555;
 }
